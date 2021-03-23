@@ -14,8 +14,9 @@ let fighterHP = 100;
 function kick() {
     
     
-    fighter.src = 'fotos/mekick.gif' ;
+    fighter.src = 'fotos/kickone.gif' ;
     fighter.style.marginLeft = "-48px"
+    fighter.style.height = "160px"
     // fighter = setInterval(gifNormal, 1700);
     let HitChance = Math.round(Math.random() * 10);
     if (HitChance <= 7) {
@@ -32,11 +33,15 @@ function kick() {
         bottomRow.innerHTML = "you missed";
     }
 
+
+
     if (enemyHP == 0){
 
         bottomRow.innerHTML += " You did fuckedup the Enemy !";
       remove.style.visibility = "hidden";
-     
+      document.getElementById("enemy").style.visibility="hidden";
+
+      location.replace("wordvervolgd.html");
 
     }
 
@@ -45,43 +50,9 @@ function kick() {
 function sword() {
     
     
-    fighter.src = 'fotos/swordatt.gif'; ;
-    fighter.style.marginLeft = "-48px"
-    fighter.style.height = "190px"
-    // fighter = setInterval(gifNormal, 1700);
-    let HitChance = Math.round(Math.random() * 10);
-    if (HitChance <= 7) {
-        let dmg = Math.round(Math.random() * 10) + 10;
-        enemyHP -= dmg;
-        if(enemyHP < 0){
-            enemyHP = 0; 
-           }
-        bottomRow.innerHTML = "You hit " + dmg + " Enemy got  " + enemyHP  + " HP left";
-        let oppHPBarWidth = (enemyHP/100)*182;
-        oppHP.style.width = oppHPBarWidth + "px";
-    } else {
-
-        bottomRow.innerHTML = "you missed";
-    }
-
-    if (enemyHP == 0){
-
-        bottomRow.innerHTML += " You did fuckedup the Enemy !";
-      remove.style.visibility = "hidden";
-     
-
-    }
-
-}
-
-
-function special() {
-    
-    
-    fighter.src = 'fotos/specialatt.gif'; 
+    fighter.src = 'fotos/swordone.gif'; ;
     fighter.style.marginLeft = "-48px"
     fighter.style.height = "180px"
-    fighter.style.marginTop = ""
     // fighter = setInterval(gifNormal, 1700);
     let HitChance = Math.round(Math.random() * 10);
     if (HitChance <= 7) {
@@ -98,15 +69,52 @@ function special() {
         bottomRow.innerHTML = "you missed";
     }
 
+
+
     if (enemyHP == 0){
 
-        bottomRow.innerHTML += " You did fuckedup the Enemy !";
+        bottomRow.innerHTML += " You did Kill the Enemy !";
       remove.style.visibility = "hidden";
+      document.getElementById("enemy").style.visibility="hidden";
      
-
+      location.replace("");
     }
 
 }
+
+
+// function special() {
+    
+    
+//     fighter.src = 'fotos/specialatt.gif'; 
+//     fighter.style.marginLeft = "-48px"
+//     fighter.style.height = "180px"
+//     fighter.style.marginTop = ""
+//     // fighter = setInterval(gifNormal, 1700);
+//     let HitChance = Math.round(Math.random() * 10);
+//     if (HitChance <= 7) {
+//         let dmg = Math.round(Math.random() * 10) + 10;
+//         enemyHP -= dmg;
+//         if(enemyHP < 0){
+//             enemyHP = 0; 
+//            }
+//         bottomRow.innerHTML = "You hit " + dmg + " Enemy got  " + enemyHP  + " HP left";
+//         let oppHPBarWidth = (enemyHP/100)*182;
+//         oppHP.style.width = oppHPBarWidth + "px";
+//     } else {
+
+//         bottomRow.innerHTML = "you missed";
+//     }
+
+//     if (enemyHP == 0){
+
+//         bottomRow.innerHTML += " You did fuckedup the Enemy !";
+//       remove.style.visibility = "hidden";
+     
+
+//     }
+
+// }
 
 
 
