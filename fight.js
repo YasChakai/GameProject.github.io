@@ -77,7 +77,7 @@ function sword() {
       remove.style.visibility = "hidden";
       document.getElementById("enemy").style.visibility="hidden";
      
-      location.replace("");
+      location.replace("wordvervolgd.html");
     }
 
 }
